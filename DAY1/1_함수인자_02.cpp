@@ -32,3 +32,9 @@ int main()
 // 
 // 2. user define type : const reference
 // ex) good(const Rect& r);
+
+// 3. iterator 같이 크기가 작고 (포인터 한개 크기)
+//    복사생성자가 하는 일이 없다면(trivial)
+//    call by value 가 좋습니다.
+
+// 4. 람다 표현식은 어떻게 받나요 ?? => T&& 또는 T
