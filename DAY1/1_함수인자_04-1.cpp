@@ -37,6 +37,8 @@ public:
 	template<typename T1, typename T2>
 	void set(T1&& n, T2&& a)
 	{
+		// 아래 처럼하면 인자를 전달할때 std::move 사용했는지에 따라서
+		// 생성되는 코드가 달라집니다.
 		name = std::forward<T1>(n);
 		addr = std::forward<T2>(a);
 	}
