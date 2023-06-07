@@ -53,3 +53,4 @@ int main()
 	Derived d; // call Derived::Derived()
 
 }
+// 위 코드를 godbolt.org 에 넣어 보세요
