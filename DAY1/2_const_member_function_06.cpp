@@ -12,6 +12,7 @@ public:
 	}
 	// C++23 에서 등장하는 새로운 멤버 함수 모양
 	// => explicit object parameter 라는 문법
+	// => "deducing this" 라는 별명을 가진 기술.
 	void f2(this Point& self, int a, int b)
 	{
 		self.x = a; 	self.y = b;
