@@ -19,5 +19,6 @@ int main()
 							// => 힙을 할당하고 문자열 자체를 힙에 복사
 	std::string_view sv1 = "to be or not to be";
 							// => 상수 메모리에 있는 문자열을 가리키기만 한다
+//	sv1 = "aaa";
 
 }

@@ -10,6 +10,10 @@
 // => C++20 에서 std::span 이 연속된 메모리에 대한 view 입니다.
 //    string_view 의 일반화 버전... std::span<int> int_view;
 
+// 또하나의 중요한 개념 "대여(borrow)" 의 개념입니다.
+// string      : 자원을 소유
+// string_view : 자원을 대여
+
 
 // std::string 을 읽기만 하는 경우
 
