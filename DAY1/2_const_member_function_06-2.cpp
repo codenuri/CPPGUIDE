@@ -20,6 +20,10 @@ public:
 		return self.buff[idx];
 	}
 
+	// explicit object parameter 장점
+	// 1. 한개의 템플릿으로 "동일이름의 const, non-const"모두 제공
+	// 2. recursive 가능한 람다 표현식 만들기
+	// 3. 캐스팅 없는 CRTP 가능.
 };
 
 
