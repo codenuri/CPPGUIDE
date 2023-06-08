@@ -4,9 +4,14 @@
 struct Point
 {
 	int x, y;
-
 	Point() = default;
 	Point(int a, int b) : x(a), y(b) {}
+
+	// 사용자가 복사 생성자를 만든 경우 (얕은 복사로 구현해도...!!)
+	// trivial 하지 않습니다.( 컴파일러는 세부 구현 방식 까지 확인할수는 없습니다.)
+	// => 복사 생성자는 반드시 필요한 경우만 만드세요
+	// => 사용자가 만드는 순간 trivial 하지 않게 됩니다.
+	Point(const Point& p) : x(p.x), y(p.y) {} 
 };
 
 template<typename T> 
