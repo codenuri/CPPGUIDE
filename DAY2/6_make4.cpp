@@ -20,4 +20,10 @@ int main()
 		std::cout << *r3 << std::endl;
 		++r3;
 	}
+
+	auto ret1 = std::find(v.begin(), v.end(), 3); // 정방향으로 검색
+	auto ret2 = std::find(v.rbegin(), v.rend(), 3); // 뒤에서 부터 검색.
+
+	// reverse iterator 덕분에 STL 의  모든 알고리즘은
+	// 순방향, 역방향 모두 가능합니다.
 }
