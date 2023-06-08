@@ -15,8 +15,8 @@ int main()
 	if (std::cin.fail()) {}
 
 	// 2. 객체의 scalar test 기술..(객체를 if 에 넣기)
-	if (std::cin)
-	{
+	if (std::cin)   // C++98 : cin.operator void*()
+	{				// C++11 : cin.operator bool()
 		// 성공..
 	}
 
