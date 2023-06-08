@@ -9,7 +9,6 @@ public:
 	// 2. 변환의 용도로 사용될수 없다.
 	explicit Vector(int sz) {}
 };
-
 void fn(Vector v) {} // 인자를 받는 것은 "Vector v = 10" 의 코드입니다.
 
 int main()
