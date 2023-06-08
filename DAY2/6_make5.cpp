@@ -11,7 +11,6 @@ public:
 	auto begin() { return rgn.rbegin(); }
 	auto end()   { return rgn.rend(); }
 };
-
 int main()
 {
 	std::vector<int> v = { 1,2,3,4,5,6,7,8 };
