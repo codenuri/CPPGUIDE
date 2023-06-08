@@ -16,16 +16,35 @@ class A
 };
 
 // B의 생성자는 trivial 할까요 ?
-class B 
+class B  // : public A
 {
 	int data;
+//  A a;
 public:
-	virtual void foo() {}
+//	virtual void foo() {}
 };
+
+// 생성자가 trivial 하려면(즉, 아무일도 하지 않으려면...)
+// 1. 가상함수가 없고
+// 2. 사용자가 만든 생성자가 없어야 하고
+// 3. 기반 클래스가 없거나, 기반 클래스의 생성자가 trivial 하고
+// 4. 객체형 멤버가 없거나, 객체형 멤버의 생성자가 trivial 할때
+
+// 생성자는 trivial 하다고 합니다.
+
 
 int main()
 {
 	B* p = static_cast<B*>(operator new(sizeof(B))); // 생성자 호출없이
-													// 메모리만 할당
-	p->foo(); // ?? 될까요 ?
+													 // 메모리만 할당
+
+//	new(p) B;	// 디폴트 생성자 호출
+
+	p->foo();	// ?? 될까요 ?
 }
+
+
+
+
+
+
