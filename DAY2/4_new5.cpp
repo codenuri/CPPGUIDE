@@ -1,4 +1,5 @@
 #include <iostream>
+#include <type_traits>
 
 class Point
 {
@@ -48,8 +49,22 @@ public:
 
 		// 2. other.buff 를 this->buffer 에 복사해야 합니다.
 		//    최선의 코드는 ????
+		if (std::is_trivially_copy_constructible_v<T>)
+		{
+			memcpy(this->buff, &(other.buff), sizeof(T) * size); //???
+		}
+		else
+		{
+			for( int i =0 ; i < size; i++)
+			{
+				new(&buff[i]) T(other.buff[i]);
+			}
+		}
 	}
 };
+
+
+
 
 int main()
 {
