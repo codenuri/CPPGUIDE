@@ -45,7 +45,11 @@ public:
 	vector(const vector& other) : size(other.size)
 	{
 		// 1. 메모리 할당
+		//buff = new T[size]; // 나쁜코드..	 메모리 할당 + 디폴트 생성자 호출
+							// 그런데, 아래 코드에서 결국 복사생성(또는 memcpy)하게 됩니다.
+
 		buff = static_cast<T*>(operator new(sizeof(T) * size));
+
 
 		// 2. other.buff 를 this->buffer 에 복사해야 합니다.
 		//    최선의 코드는 ????
@@ -62,6 +66,9 @@ public:
 		}
 	}
 };
+// C++ 진영에서 가끔 아래 2개 용어를 듣게 됩니다.
+// bitwise copy     : 위 코드에서 memcpy 버전
+// member wise copy : 위 코드에서 아래 코드(각 멤버 별로 복사(복사 생성자 사용))
 
 
 
