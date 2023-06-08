@@ -14,3 +14,5 @@ int main()
 //	caller(foo, 0);			// error
 	caller(foo, nullptr);	// ok
 }
+
+// 결론 : 포인터 의미일때는 0 대신 nullptr 사용하세요
