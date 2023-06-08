@@ -7,7 +7,7 @@ class Test
 {
 	int data;
 public:
-	virtual void foo() {}
+	//virtual void foo() {}
 };
 
 // POD : C++11 이전의 용어, class 가 C의 구조체와 호환되는가 ??
