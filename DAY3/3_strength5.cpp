@@ -20,6 +20,7 @@ public:
 	// "U 가 T에 복사 (대입)될수 있다면
 	// "Complex<U> 도 Complex<T>에 복사 될수 있어야 한다."
 
+	// "Coercion by member template" 이라는 이름을 가진 기술 입니다.
 	template<typename U>
 	Complex(const Complex<U>& c) : real(c.real), image(c.image) {}
 
