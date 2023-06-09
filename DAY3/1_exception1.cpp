@@ -18,5 +18,10 @@ public:
 
 int main()
 {
+	try
+	{
+		FileStream fs("c:\\aaa.png");
+	}
+	catch (...) {}
 
 }
