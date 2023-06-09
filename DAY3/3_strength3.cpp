@@ -11,6 +11,9 @@ class Object;	// 클래스 전방 선언
 
 void deleter(Object* p)
 {
+	static_assert(sizeof(Object) > 0,
+		"error, delete incomplete type");
+
 	delete p;
 }
 
