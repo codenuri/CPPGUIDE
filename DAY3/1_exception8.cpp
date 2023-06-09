@@ -6,6 +6,8 @@
 // => 스택 풀기 기술 활용
 
 // 항상 모든 자원의 할당/해지는  생성자 소멸자에 의존해야 합니다.
+// RAII 라는 이름의 기술
+// => Resource Acquision Is (자원관리 객체가 ) Initialization
 template<typename T>
 class lock_guard
 {
@@ -19,6 +21,7 @@ std::mutex m;
 void foo()
 {
 	lock_guard<std::mutex> g(m); // RAII 기술!
+							     // g의 생성자가 m.lock()
 
 //	m.lock();
 
@@ -26,7 +29,9 @@ void foo()
 	throw std::runtime_error("my exception");
 	
 //	m.unlock();
-}
+}	// <== g 가 파괴, 소멸자에 m.unlock()
+
+
 
 int main()
 {
