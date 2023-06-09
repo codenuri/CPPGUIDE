@@ -15,7 +15,6 @@ int main()
 					// class BBB{}; BBB() 이므로 다른 타입
 
 
-
 	// 2. std::function 에도 람다표현식을 담을수 있습니다.
 	std::function<int(int, int)> f3 = [](int a, int b) { return a + b; };
 
@@ -34,4 +33,16 @@ int main()
 	v2.push_back([](int a, int b) { return a - b; });
 	v2.push_back([](int a, int b) { return a + b; });
 
+
+	// 정리 1. 람다표현식 한개를 변수에 담아 사용할때 
+	// => 무조건 auto 사용!!
+	auto f1 = [](int a, int b) {return a + b; }; // good
+
+	std::function<int(int, int)> f2 = [](int a, int b) {return a + b; }; // bad
+
+	int r1 = f1(1, 2); // 대부분 inline 치환 됩니다.
+	int r2 = f2(1, 2); // 대부분 inline 치환 안됩니다.
+
+	// 정리 2. 람다표현식을 변경해야 하거나, vector 등에 보관할때는
+	// => function 밖에 안됩니다.
 }
