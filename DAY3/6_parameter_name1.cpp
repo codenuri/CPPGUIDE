@@ -44,7 +44,8 @@ void foo()
 		// lock 을 이미 획득했지만, unlock 은 자동으로 하고 싶다.
 		// lock_guard<std::mutex> g(m); // 버그, 생성자에서 다시 lock 
 
-		lock_guard<std::mutex> g(m, adopt_lock);
+		//lock_guard<std::mutex> g(m, adopt_lock);
+		std::lock_guard<std::mutex> g(m, std::adopt_lock);
 
 		shared_data = 100;
 		
