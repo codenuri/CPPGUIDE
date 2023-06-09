@@ -16,7 +16,9 @@ public:
 	*/
 
 	// enable_if 기술 : 조건을 만족하지 않은 경우에는 템플릿을 사용하지 않게 하는 기술.
+	// 현재 main 코드라면.. U : string   T : int
 
+	// 왜 사용하나요 ?? => 안전하고, 에러가 이쁘게 출력 됩니다.!
 	template<typename U,
 			 typename = std::enable_if_t< std::is_convertible_v<U, T> >>
 
