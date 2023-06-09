@@ -32,12 +32,11 @@ auto hoo()
 	return [&num](int a, int b) { return a + b + num; };
 	
 }
-
-
 int main()
 {
 	foo();
 	goo();
 
-
+	auto f3 = hoo();
+	f3(1, 2); // 미정의 동작 발생
 }
